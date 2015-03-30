@@ -3,10 +3,12 @@
 /* TODO Convention Java sur les noms de classe (i.e Classe et non classe). */
 public class grille {
     /* TODO JAVADOC. */
+    /* TODO Convention sur les noms de constantes (i.e. CONSTANTE et non constante). */
     //composition du tableau de jeu (nombres de lignes et de colonnes)
-    private final static int nbLigne   = 5;
+    private static final int nbLigne   = 5;
     /* TODO JAVADOC. */
-    private final static int nbColonne = 6;
+    /* TODO Convention sur les noms de constantes (i.e. CONSTANTE et non constante). */
+    private static final int nbColonne = 6;
     /* TODO JAVADOC. */
     private final cellule grille[][];
 
@@ -17,6 +19,7 @@ public class grille {
 
     }
 
+    /* TODO Pourquoi afficherGrille() renvoie une grille ? */
     /* TODO JAVADOC. */
     //fonction d'affichage de la grille
     public grille afficherGrille() {
