@@ -20,7 +20,7 @@ public class grille {
 		{
 			for(int j=0; j <= nbColonne; j++)
 			{
-				grille[i][j] = '.';
+				if grille[i][j] == 0
 				
 				
 			}
