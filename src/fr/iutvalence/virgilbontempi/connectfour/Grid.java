@@ -7,39 +7,38 @@ package fr.iutvalence.virgilbontempi.connectfour;
  * @version 1.0
  */
 public class Grid {
-    /* TODO Translate. */
-    /**
-     * Nombre de lignes max du tableau de jeu.
-     */
-    private static final int NBLINE   = 6;
-    /* TODO Translate. */
-    /**
-     * Nombre de colonnes max du tableau de jeu.
-     */
-    private static final int NBCOLUMN = 7;
-    /* TODO Translate. */
-    /**
-     * Attribut grille, un tableau � deux dimensions.
-     */
-    /* TODO Translate. */
-    private final Piece[][] grille;
 
-    /* TODO Translate. */
-    /**
-     * Initialisation de la grille de jeu.
-     */
-    public Grid() {
-        this.grille = new Piece[NBLINE][NBCOLUMN];
-        /* TODO Initialize your "grille" with Piece.EMPTY */
-    }
+	/**
+	 * Max line number of the table
+	 */
+	private static final int NBLINE = 6;
 
-    /* TODO JAVADOC. */
-    //fonction d'affichage de la grille
-    public void afficher() {
-        for (int i = 0; i <= NBLINE; i++) {
-            for (int j = 0; j <= NBCOLUMN; j++) {
-                System.out.println("|  |");
-            }
-        }
-    }
+	/**
+	 * Max column number of the table
+	 */
+	private static final int NBCOLUMN = 7;
+
+	/**
+	 * Attribute "grille" type "Piece", a tableau with two dimensions
+	 */
+	private final Piece[][] grille;
+
+	/**
+	 * Initialization of "grille"
+	 */
+	public Grid() {
+		this.grille = new Piece[NBLINE][NBCOLUMN];
+		/* TODO Initialize your "grille" with Piece.EMPTY */
+	}
+
+	/**
+	 * Display function of the grid
+	 */
+	public void afficher() {
+		for (int i = 0; i <= NBLINE; i++) {
+			for (int j = 0; j <= NBCOLUMN; j++) {
+				System.out.println("|  |");
+			}
+		}
+	}
 }

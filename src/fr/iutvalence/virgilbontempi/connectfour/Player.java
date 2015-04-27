@@ -7,16 +7,25 @@ package fr.iutvalence.virgilbontempi.connectfour;
  * @version 1.0
  */
 public class Player {
-    /* TODO JAVADOC. */
-    private final String name;
 
-    /* TODO JAVADOC. */
-    public Player(String name) {
-        this.name = name;
-    }
+	/**
+	 * Attribute "name" type "String"
+	 */
+	private final String name;
 
-    /** Name getter. */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * "name" constructor
+	 * 
+	 * @param name
+	 */
+	public Player(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * Name getter
+	 */
+	public String getName() {
+		return name;
+	}
 }
