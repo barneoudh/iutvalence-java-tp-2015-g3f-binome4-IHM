@@ -9,17 +9,28 @@ package fr.iutvalence.virgilbontempi.connectfour;
 public enum Piece {
 
 	/**
-	 * Color red, "player1" pieces
+	 * Color red, "player1" pieces.
 	 */
-	RED,
+	RED("X"),
 
 	/**
-	 * Color yellow, "player2" pieces
+	 * Color yellow, "player2" pieces.
 	 */
-	YELLOW,
+	YELLOW("O"),
 
 	/**
-	 * No color for an empty location
+	 * No color for an empty location.
 	 */
-	EMPTY;
+	EMPTY(" ");
+	
+	private final String display;
+	
+	Piece(String disp) {
+		display = disp;
+	}
+	
+	@Override
+	public String toString() {
+		return display;
+	}
 }

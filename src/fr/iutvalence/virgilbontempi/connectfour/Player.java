@@ -9,12 +9,12 @@ package fr.iutvalence.virgilbontempi.connectfour;
 public class Player {
 
 	/**
-	 * Attribute "name" type "String"
+	 * Attribute "name" type "String".
 	 */
 	private final String name;
 
 	/**
-	 * "name" constructor
+	 * The "name" constructor.
 	 * 
 	 * @param name
 	 */
@@ -23,7 +23,7 @@ public class Player {
 	}
 
 	/**
-	 * Name getter
+	 * Name getter.
 	 */
 	public String getName() {
 		return name;
