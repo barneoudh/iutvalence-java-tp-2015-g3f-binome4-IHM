@@ -28,23 +28,33 @@ public class Grid {
 	 */
 	public Grid() {
 		this.grille = new Piece[NBLINE][NBCOLUMN];
-		for (int i = 0; i < NBLINE; i++) {
-			for (int j = 0; j < NBCOLUMN; j++) {
-				grille[i][j] = Piece.EMPTY;
+		for (int line = 0; line < NBLINE; line++) {
+			for (int column = 0; column < NBCOLUMN; column++) {
+				grille[line][column] = Piece.EMPTY;
 			}
 		}
 	}
 
+	
+	/**
+	 * Function for the grid. 
+	 */
+	
 	public String toString() {
 		// TODO StringBuilder
 		String res = "";
-		for (int i = 0; i < NBLINE; i++) {
-			for (int j = 0; j < NBCOLUMN; j++) {
-				res += String.format("| %s |", grille[i][j]);
+		for (int line = 0; line < NBLINE; line++) {
+			for (int column = 0; column < NBCOLUMN; column++) {
+				res += String.format("| %s |", grille[line][column]);
 			}
-			res += "\n";
+			res += "\n";		
 		}
 		return res;
+	}
+	
+	public void ChooseColumn() {
+		
+		
 	}
 }
 

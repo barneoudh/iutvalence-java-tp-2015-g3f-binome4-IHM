@@ -19,6 +19,7 @@ public class Game {
 	 * Attribute named "grid" type "Grid".
 	 */
 	private final Grid grid;
+	private Player currentPlayer;
 
 	/**
 	 * The "player1" and "player2" constructors.
@@ -35,6 +36,26 @@ public class Game {
 	}
 	
 	
+	/**
+	 * Initialization currentPlayer
+	 */
+	public void initCurrentPlayer() {
+		currentPlayer = player1;
+	}
+	
+	/**
+	 *Function for player switch
+	 */
+	
+	public void switchPlayer() {
+		
+		if(currentPlayer == player1) currentPlayer = player2;
+		else currentPlayer = player1; 
+		
+	}
+	
+	
+
 	/**
 	 * Starter function.
 	 */
