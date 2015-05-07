@@ -6,26 +6,33 @@ package fr.iutvalence.virgilbontempi.connectfour;
  * @author cadetm/bontempv
  * @version 1.0
  */
-public class Player {
+public class Player
+{
 
 	/**
 	 * Attribute "name" type "String".
 	 */
 	private final String name;
 
+	
 	/**
 	 * The "name" constructor.
 	 * 
 	 * @param name
 	 */
-	public Player(String name) {
+	public Player(String name)
+	{
 		this.name = name;
 	}
 
+	
 	/**
 	 * Name getter.
 	 */
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
+	
+	
 }
