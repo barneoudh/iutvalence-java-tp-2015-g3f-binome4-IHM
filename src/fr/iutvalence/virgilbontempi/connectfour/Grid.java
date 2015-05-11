@@ -1,5 +1,7 @@
 package fr.iutvalence.virgilbontempi.connectfour;
 
+import java.util.Scanner;
+
 /**
  * Game: the grid.
  *
@@ -11,12 +13,12 @@ public class Grid {
 	/**
 	 * Max line number of the table.
 	 */
-	private static final int NBLINE = 6;
+	public static final int NBLINE = 6;
 
 	/**
 	 * Max column number of the table.
 	 */
-	private static final int NBCOLUMN = 7;
+	public static final int NBCOLUMN = 7;
 
 	/**
 	 * Attribute "grille" type "Piece", a tableau with two dimensions.
@@ -30,7 +32,7 @@ public class Grid {
 		this.grille = new Piece[NBLINE][NBCOLUMN];
 		for (int line = 0; line < NBLINE; line++) {
 			for (int column = 0; column < NBCOLUMN; column++) {
-				grille[line][column] = Piece.EMPTY;
+				getGrille()[line][column] = Piece.EMPTY;
 			}
 		}
 	}
@@ -39,87 +41,31 @@ public class Grid {
 	 * Function for the grid.
 	 */
 	public String toString() {
-		// TODO StringBuilder
-		String res = "";
+		StringBuilder res = new StringBuilder();
 		for (int line = 0; line < NBLINE; line++) {
 			for (int column = 0; column < NBCOLUMN; column++) {
-				res += String.format("| %s |", grille[line][column]);
+				res.append(String.format("| %s |", getGrille()[line][column]));
 			}
-			res += "\n";
+			res.append("\n");
 		}
-		return res;
-	}
-
-	public void ChooseColumn() {
-
-		// TODO faire la fonction
+		return res.toString();
 	}
 
 	/**
-	 * Function searching for 4 aligned pieces.
-	 */
-	public boolean win() {
-		for (int line = 0; line < NBLINE; line++) {
-			for (int column = 0; column < NBCOLUMN; column++) {
-				if (horizontalRight(line, column)
-						|| verticalDown(line, column)
-						|| diagonalDownRight(line, column)
-						|| diagonalDownLeft(line, column)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-
-	
-	/**
-	 * Function searching for 4 horizontal right aligned pieces.
+	 * Getter Grille;
 	 * 
-	 * @param line
-	 * @param column
 	 * @return
 	 */
-	private boolean horizontalRight(int line, int column) {
-		return ((grille[line][column] == grille[line][column + 1])
-				&& (grille[line][column + 2] == grille[line][column + 3]) && (grille[line][column + 1] == grille[line][column + 2]));
-	}
-
-	
-	/**
-	 * Function searching for 4 vertical down aligned pieces.
-	 * 
-	 * @param line
-	 * @param column
-	 * @return
-	 */
-	private boolean verticalDown(int line, int column) {
-		return ((grille[line][column] == grille[line - 1][column])
-				&& (grille[line - 2][column] == grille[line - 3][column]) && (grille[line - 1][column] == grille[line - 2][column]));
-	}
-
-	
-	/**
-	 * Function searching for 4 diagonal down right aligned pieces.
-	 * 
-	 * @param line
-	 * @param column
-	 * @return
-	 */
-	private boolean diagonalDownRight(int line, int column) {
-		return ((grille[line][column] == grille[line + 1][column + 1])
-				&& (grille[line + 2][column + 2] == grille[line + 3][column + 3]) && (grille[line + 1][column + 1] == grille[line + 2][column + 2]));
+	public Piece[][] getGrille() {
+		return grille;
 	}
 
 	/**
-	 * Function searching for 4 diagonal down left aligned pieces.
+	 * Setter Grille.
 	 * 
-	 * @param line
-	 * @param column
-	 * @return
 	 */
-	private boolean diagonalDownLeft(int line, int column) {
-		return ((grille[line][column] == grille[line + 1][column - 1])
-				&& (grille[line + 2][column - 2] == grille[line + 3][column - 3]) && (grille[line + 1][column - 1] == grille[line + 2][column - 2]));
+	public void setGrille(int line, int column, Piece piece) {
+		this.grille[line][column] = piece;
 	}
+
 }
