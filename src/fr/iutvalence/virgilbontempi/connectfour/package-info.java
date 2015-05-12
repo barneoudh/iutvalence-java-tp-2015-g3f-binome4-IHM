@@ -1,6 +1,3 @@
-/**
- * @author bontempv
- *
- */
+/* TODO JAVADOC. */
 package fr.iutvalence.virgilbontempi.connectfour;
 

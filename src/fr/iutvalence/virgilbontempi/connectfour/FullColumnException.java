@@ -1,10 +1,7 @@
 package fr.iutvalence.virgilbontempi.connectfour;
 
-/**
- * @author virgi_000
- *
- */
+/* TODO JAVADOC. */
 public class FullColumnException extends Exception {
-	private static final long serialVersionUID = 1L;
-
+    /* TODO JAVADOC. */
+    private static final long serialVersionUID = 1L;
 }
