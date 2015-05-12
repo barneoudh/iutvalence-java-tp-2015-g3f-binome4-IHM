@@ -27,12 +27,6 @@ public class Game {
         player1 = new Player(name1);
         player2 = new Player(name2);
         grid = new Grid();
-    }
-
-    /**
-     * Initialization currentPlayer.
-     */
-    private void initCurrentPlayer() {
         currentPlayer = player1;
     }
 
