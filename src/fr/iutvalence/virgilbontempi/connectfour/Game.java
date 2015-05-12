@@ -1,5 +1,6 @@
 package fr.iutvalence.virgilbontempi.connectfour;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -18,11 +19,7 @@ public class Game {
     /** Attribute named "currentPlayer" type "Player". */
     private Player currentPlayer;
 
-    /**
-     * The "player1" and "player2" constructors.
-     *
-     * @param name2 The "grid" constructor.
-     */
+    /** Create a new game for the two given players. */
     public Game(final String name1, final String name2) {
         player1 = new Player(name1);
         player2 = new Player(name2);
@@ -30,13 +27,9 @@ public class Game {
         currentPlayer = player1;
     }
 
-    /**
-     * Function for player switch.
-     */
+    /** Switch of player. */
     private void switchPlayer() {
-
-        if (currentPlayer == player1) { currentPlayer = player2; }
-        else { currentPlayer = player1; }
+        currentPlayer = (Objects.equals(currentPlayer, player1)) ? player2 : player1;
     }
 
     /**
