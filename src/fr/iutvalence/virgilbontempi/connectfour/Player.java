@@ -9,17 +9,24 @@ package fr.iutvalence.virgilbontempi.connectfour;
  */
 public class Player {
 
-    /** Attribute "name" type "String". */
-    private final String name;
+	/** Attribute "name" type "String". */
+	private final String name;
 
-    /** Build a player by its name. */
-    public Player(String name) {
-        this.name = name;
-    }
+	/** Attribute "piece" type "Piece". */
+	private Piece piece;
 
-    /* TODO unused ? */
-    /** Name getter. */
-    public String getName() {
-        return name;
-    }
+	public Piece getPiece() {
+		return piece;
+	}
+
+	/**
+	 * Build a player by its name.
+	 * 
+	 * @param piece
+	 */
+	public Player(String name, Piece piece) {
+		this.name = name;
+		this.piece = piece;
+	}
+
 }
