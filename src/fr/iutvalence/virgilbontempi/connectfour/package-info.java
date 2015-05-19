@@ -1,3 +1,5 @@
-/* TODO JAVADOC. */
+/**
+ * The package.
+ */
 package fr.iutvalence.virgilbontempi.connectfour;
 

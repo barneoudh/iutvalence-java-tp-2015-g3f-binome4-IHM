@@ -1,6 +1,5 @@
 package fr.iutvalence.virgilbontempi.connectfour;
 
-// TODO No "toString" method ?
 /**
  * Player's settings.
  *
@@ -29,4 +28,8 @@ public class Player {
 		this.piece = piece;
 	}
 
+	@Override
+	public String toString() {
+		return name;
+	}
 }

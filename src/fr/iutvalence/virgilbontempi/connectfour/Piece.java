@@ -14,10 +14,15 @@ public enum Piece {
     /** No color for an empty location. */
     EMPTY(" ");
 
-    /* TODO JAVADOC. */
+    /**
+     * Display a string.
+     */
     private final String display;
 
-    /* TODO JAVADOC. */
+    /**
+     * Display a piece.
+     * @param disp
+     */
     Piece(String disp) {
         display = disp;
     }

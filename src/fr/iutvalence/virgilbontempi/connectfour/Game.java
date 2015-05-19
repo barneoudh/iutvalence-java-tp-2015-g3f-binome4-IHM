@@ -3,7 +3,6 @@ package fr.iutvalence.virgilbontempi.connectfour;
 import java.util.Objects;
 import java.util.Scanner;
 
-/* TODO No "toString()"? */
 /**
  * Game: the players and the grid.
  *
@@ -69,7 +68,6 @@ public class Game {
 			switchPlayer();
 		}
 
-		/* TODO This second call to "win" is costly! */
 		if (grid.win()) {
 			switchPlayer();
 			System.out.println(currentPlayer + ", you won !!! Congratulations");
@@ -89,10 +87,10 @@ public class Game {
 			grid.placementPiece(choosenColumn, currentPlayer.getPiece());
 			System.out.println(grid);
 		} catch (OutOfRangeException ignore) {
-			System.err.println("Input an other column, the selected column is out of range");
+			System.err.println("Insert an other column, the selected column is out of range");
 			playARound();
 		} catch (FullColumnException ignore) {
-			System.err.println("Input an other column, the selected column is full");
+			System.err.println("Insert an other column, the selected column is full");
 			playARound();
 		}
 	}
@@ -105,14 +103,10 @@ public class Game {
 	 * @throws FullColumnException
 	 */
 	public int inputColumn() throws OutOfRangeException, FullColumnException {
-		/*
-		 * TODO You should avoid to create a new Scanner in each call to this
-		 * method.
-		 */
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Input a column");
+		System.out.println("Insert a column ranged between 0 and 6");
 		int column = scanner.nextInt();
-		if ((column < Grid.NBCOLUMN) || (column > Grid.NBCOLUMN)) {
+		if ((column < 0) || (column > Grid.NBCOLUMN)) {
 			throw new OutOfRangeException();
 		}
 		if (grid.isColumnFull(column)) {

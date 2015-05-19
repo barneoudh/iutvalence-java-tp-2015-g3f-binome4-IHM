@@ -33,6 +33,15 @@ public class Grid {
 			for (int column = 0; column < NBCOLUMN; column++) {
 				res.append(String.format("| %s |", grill[line][column]));
 			}
+			//TODO Refaire ça, c'est trop moche !!!!!
+			res.append('\n');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
 			res.append('\n');
 		}
 		return res.toString();
@@ -43,7 +52,7 @@ public class Grid {
 		return grill;
 	}
 
-	/** Setter Grill. */
+	/** Setter grill. */
 	public void setGrille(int line, int column, Piece piece) {
 		grill[line][column] = piece;
 	}
@@ -54,11 +63,11 @@ public class Grid {
 	 * @param column
 	 */
 	public void placementPiece(int column, Piece piece) {
-		int line = 0;
-		while ((line < Grid.NBLINE) && (grill[line][column] != Piece.EMPTY)) {
-			line++;
+		int line = NBLINE-1;
+		while ((line > 0) && (grill[line][column] != Piece.EMPTY)) {
+			line--;
 		}
-		setGrille(line - 1, column, piece);
+		setGrille(line, column, piece);
 	}
 
 	/**
@@ -94,7 +103,6 @@ public class Grid {
 						return true;
 					}
 				} catch (EmptyPieceException e) {
-				System.err.println("All columns are empty.");
 				}
 			}
 		}
@@ -109,9 +117,13 @@ public class Grid {
 		if (grill[line][column] == Piece.EMPTY) {
 			throw new EmptyPieceException();
 		}
-		return (grill[line][column] == grill[line][column + 1])
-				&& (grill[line][column + 2] == grill[line][column + 3])
-				&& (grill[line][column + 1] == grill[line][column + 2]);
+		try {
+			return (grill[line][column] == grill[line][column + 1])
+					&& (grill[line][column + 2] == grill[line][column + 3])
+					&& (grill[line][column + 1] == grill[line][column + 2]);
+		} catch (ArrayIndexOutOfBoundsException ignore) {
+			return false;
+		}
 	}
 
 	/**
@@ -122,9 +134,13 @@ public class Grid {
 		if (grill[line][column] == Piece.EMPTY) {
 			throw new EmptyPieceException();
 		}
-		return (grill[line][column] == grill[line - 1][column])
-				&& (grill[line - 2][column] == grill[line - 3][column])
-				&& (grill[line - 1][column] == grill[line - 2][column]);
+		try {
+			return (grill[line][column] == grill[line - 1][column])
+					&& (grill[line - 2][column] == grill[line - 3][column])
+					&& (grill[line - 1][column] == grill[line - 2][column]);
+		} catch (ArrayIndexOutOfBoundsException ignore) {
+			return false;
+		}
 	}
 
 	/**
@@ -135,9 +151,13 @@ public class Grid {
 		if (grill[line][column] == Piece.EMPTY) {
 			throw new EmptyPieceException();
 		}
-		return (grill[line][column] == grill[line + 1][column + 1])
-				&& (grill[line + 2][column + 2] == grill[line + 3][column + 3])
-				&& (grill[line + 1][column + 1] == grill[line + 2][column + 2]);
+		try {
+			return (grill[line][column] == grill[line + 1][column + 1])
+					&& (grill[line + 2][column + 2] == grill[line + 3][column + 3])
+					&& (grill[line + 1][column + 1] == grill[line + 2][column + 2]);
+		} catch (ArrayIndexOutOfBoundsException ignore) {
+			return false;
+		}
 	}
 
 	/**
@@ -148,9 +168,13 @@ public class Grid {
 		if (grill[line][column] == Piece.EMPTY) {
 			throw new EmptyPieceException();
 		}
-		return (grill[line][column] == grill[line + 1][column - 1])
-				&& (grill[line + 2][column - 2] == grill[line + 3][column - 3])
-				&& (grill[line + 1][column - 1] == grill[line + 2][column - 2]);
+		try {
+			return (grill[line][column] == grill[line + 1][column - 1])
+					&& (grill[line + 2][column - 2] == grill[line + 3][column - 3])
+					&& (grill[line + 1][column - 1] == grill[line + 2][column - 2]);
+		} catch (ArrayIndexOutOfBoundsException ignore) {
+			return false;
+		}
 	}
 
 }

@@ -1,10 +1,17 @@
 package fr.iutvalence.virgilbontempi.connectfour;
 
-/* TODO JAVADOC. */
+/**
+ * @author bontempv
+ *
+ *Start the game (by the way of Game).
+ */
 public class Starter {
-	/* TODO JAVADOC. */
+	/**
+	 * The main class.
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		Game game = new Game("Palyer 1", "Player 2");
+		Game game = new Game("Player 1", "Player 2");
 		game.start();
 	}
 }
