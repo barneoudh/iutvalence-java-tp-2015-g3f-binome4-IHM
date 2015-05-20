@@ -8,9 +8,9 @@ package fr.iutvalence.virgilbontempi.connectfour;
  */
 public enum Piece {
     /** Color red, "player1" pieces. */
-    RED("X"),
+    RED("●"),
     /** Color yellow, "player2" pieces. */
-    YELLOW("O"),
+    YELLOW("○"),
     /** No color for an empty location. */
     EMPTY(" ");
 

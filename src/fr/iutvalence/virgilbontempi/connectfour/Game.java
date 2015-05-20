@@ -3,6 +3,9 @@ package fr.iutvalence.virgilbontempi.connectfour;
 import java.util.Objects;
 import java.util.Scanner;
 
+import fr.iutvalence.virgilbontempi.connectfour.exceptions.FullColumnException;
+import fr.iutvalence.virgilbontempi.connectfour.exceptions.OutOfRangeException;
+
 /**
  * Game: the players and the grid.
  *
@@ -70,7 +73,7 @@ public class Game {
 
 		if (grid.win()) {
 			switchPlayer();
-			System.out.println(currentPlayer + ", you won !!! Congratulations");
+			System.out.println(currentPlayer + ", you won ! Congratulations !");
 		} else {
 			System.out.println("Nobody has won");
 		}
@@ -83,14 +86,15 @@ public class Game {
 	 */
 	private void playARound() {
 		try {
+			System.out.format("%s's round ! ", currentPlayer);
 			int choosenColumn = inputColumn();
 			grid.placementPiece(choosenColumn, currentPlayer.getPiece());
 			System.out.println(grid);
 		} catch (OutOfRangeException ignore) {
-			System.err.println("Insert an other column, the selected column is out of range");
+			System.err.println("Insert an other column, the selected column is out of range !");
 			playARound();
 		} catch (FullColumnException ignore) {
-			System.err.println("Insert an other column, the selected column is full");
+			System.err.println("Insert an other column, the selected column is full !");
 			playARound();
 		}
 	}
@@ -104,9 +108,9 @@ public class Game {
 	 */
 	public int inputColumn() throws OutOfRangeException, FullColumnException {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Insert a column ranged between 0 and 6");
+		System.out.println("Insert a column ranged between 0 and 6 !");
 		int column = scanner.nextInt();
-		if ((column < 0) || (column > Grid.NBCOLUMN)) {
+		if ((column < 0) || (column >= Grid.NBCOLUMN)) {
 			throw new OutOfRangeException();
 		}
 		if (grid.isColumnFull(column)) {

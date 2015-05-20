@@ -2,6 +2,8 @@ package fr.iutvalence.virgilbontempi.connectfour;
 
 import java.util.Objects;
 
+import fr.iutvalence.virgilbontempi.connectfour.exceptions.EmptyPieceException;
+
 /**
  * The grid.
  *
@@ -28,25 +30,24 @@ public class Grid {
 
 	@Override
 	public String toString() {
+		for(int number = 0; number < NBCOLUMN; number++){
+			System.out.format("  %d ", number);
+		}
+		System.out.println(' ');
+		System.out.println("―――――――――――――――――――――――――――――");
 		StringBuilder res = new StringBuilder(5 * NBLINE * (NBCOLUMN + 1));
 		for (int line = 0; line < NBLINE; line++) {
 			for (int column = 0; column < NBCOLUMN; column++) {
-				res.append(String.format("| %s |", grill[line][column]));
+				res.append(String.format("│ %s ", grill[line][column]));
 			}
-			//TODO Refaire ça, c'est trop moche !!!!!
+			res.append(String.format("│"));
 			res.append('\n');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
-			res.append('―');res.append('―');res.append('―');res.append('―');res.append('―');
+			res.append("―――――――――――――――――――――――――――――");
 			res.append('\n');
 		}
 		return res.toString();
 	}
-
+	
 	/** Getter Grill. */
 	public Piece[][] getGrille() {
 		return grill;

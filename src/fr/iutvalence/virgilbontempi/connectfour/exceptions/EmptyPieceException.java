@@ -1,7 +1,7 @@
-package fr.iutvalence.virgilbontempi.connectfour;
+package fr.iutvalence.virgilbontempi.connectfour.exceptions;
 
 /** Exception the piece is empty */
 public class EmptyPieceException extends Exception {
-    /* TODO JAVADOC. */
+	/** Serial version UID. */
     private static final long serialVersionUID = 1L;
 }
