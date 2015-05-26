@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 public class Window extends JFrame {
 	private Panel pan = new Panel();
 	private JButton bouton = new JButton("BOUTON");
+	private SplitPane splitpane = new SplitPane();
 
 	public Window(){
 
@@ -15,13 +16,10 @@ public class Window extends JFrame {
 	    this.setSize(600,600);
 	    this.setLocationRelativeTo(null);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
-	    this.setLayout(new GridLayout(6, 7));
-
-	    
-	    
-	    pan.setBackground(Color.WHITE);
+	    pan.setBackground(Color.BLACK);
 	    this.setContentPane(pan);               
 	    this.setVisible(true);
+	    
 	    
 	  }
 }
