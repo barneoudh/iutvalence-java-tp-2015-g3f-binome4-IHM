@@ -1,10 +1,10 @@
-package fr.iutvalence.virgilbontempi.connectfour;
+package fr.iutvalence.farisbhectorb.java.model;
 
 import java.util.Objects;
 import java.util.Scanner;
 
-import fr.iutvalence.virgilbontempi.connectfour.exceptions.FullColumnException;
-import fr.iutvalence.virgilbontempi.connectfour.exceptions.OutOfRangeException;
+import fr.iutvalence.farisbhectorb.exceptions.FullColumnException;
+import fr.iutvalence.farisbhectorb.exceptions.OutOfRangeException;
 
 /**
  * Game: the players and the grid.

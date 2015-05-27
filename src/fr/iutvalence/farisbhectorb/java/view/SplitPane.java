@@ -1,4 +1,4 @@
-package IHM;
+package fr.iutvalence.farisbhectorb.java.view;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,18 +11,12 @@ public class SplitPane extends JFrame {
 	        setSize(500, 500);
 	        Panel panel = new Panel();
 	        PanelGrid panelGrid = new PanelGrid();
+
 	        
 	        JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
 	                true, panel, panelGrid);
 	         
 	        splitPane.setOneTouchExpandable(false);
 	        getContentPane().add(splitPane);
-	   }
-	 
-	 public static void main(String[] args) {
-         
-	        SplitPane sp = new SplitPane();
-	        sp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        sp.setVisible(true);
 	   }
 }

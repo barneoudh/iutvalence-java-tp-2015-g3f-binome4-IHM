@@ -1,4 +1,4 @@
-package fr.iutvalence.virgilbontempi.connectfour.exceptions;
+package fr.iutvalence.farisbhectorb.exceptions;
 
 /** Exception the piece is empty */
 public class EmptyPieceException extends Exception {

@@ -1,4 +1,4 @@
-package IHM;
+package fr.iutvalence.farisbhectorb.java.view;
 
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -12,7 +12,7 @@ public class PanelGrid extends JPanel {
 		this.setLayout(new GridLayout(6,7));
 		for(int i=0; i<42; i++)
 		{
-				this.add(new CaseGrid());		
+				this.add(new BoutonDeLaGrille());		
 		}
 	
 			

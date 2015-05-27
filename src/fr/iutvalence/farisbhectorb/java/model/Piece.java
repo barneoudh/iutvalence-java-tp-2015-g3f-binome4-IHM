@@ -1,4 +1,4 @@
-package fr.iutvalence.virgilbontempi.connectfour;
+package fr.iutvalence.farisbhectorb.java.model;
 
 /**
  * Piece.
@@ -8,7 +8,7 @@ package fr.iutvalence.virgilbontempi.connectfour;
  */
 public enum Piece {
     /** Color red, "player1" pieces. */
-    RED("●"),
+    RED("�?"),
     /** Color yellow, "player2" pieces. */
     YELLOW("○"),
     /** No color for an empty location. */

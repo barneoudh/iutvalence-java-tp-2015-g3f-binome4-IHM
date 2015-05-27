@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author barneohe
- *
- */
-package IHM;

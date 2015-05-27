@@ -1,8 +1,8 @@
-package fr.iutvalence.virgilbontempi.connectfour;
+package fr.iutvalence.farisbhectorb.java.model;
 
 import java.util.Objects;
 
-import fr.iutvalence.virgilbontempi.connectfour.exceptions.EmptyPieceException;
+import fr.iutvalence.farisbhectorb.exceptions.EmptyPieceException;
 
 /**
  * The grid.

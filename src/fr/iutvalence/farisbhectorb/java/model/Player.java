@@ -1,4 +1,4 @@
-package fr.iutvalence.virgilbontempi.connectfour;
+package fr.iutvalence.farisbhectorb.java.model;
 
 /**
  * Player's settings.

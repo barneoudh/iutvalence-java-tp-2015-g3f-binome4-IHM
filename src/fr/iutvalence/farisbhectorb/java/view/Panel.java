@@ -1,4 +1,4 @@
-package IHM;
+package fr.iutvalence.farisbhectorb.java.view;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 
