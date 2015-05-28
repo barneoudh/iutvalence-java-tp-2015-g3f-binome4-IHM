@@ -15,6 +15,7 @@ import fr.iutvalence.farisbhectorb.exceptions.OutOfRangeException;
 public class Game {
 	/** Attribute named "player1" type "Player". */
 	private final Player player1;
+	private User user;
 
 	/**
 	 * Player player1's getter.
@@ -40,8 +41,11 @@ public class Game {
 	/** Attribute named "grid" type "Grid". */
 	private final Grid grid;
 
+
+
 	/** Attribute named "currentPlayer" type "Player". */
 	private Player currentPlayer;
+
 
 	/**
 	 * Create a new game for the two given players.
@@ -86,15 +90,15 @@ public class Game {
 	 */
 	private void playARound() {
 		try {
-			System.out.format("%s's round ! ", currentPlayer);
+			user.currentPlayer(currentPlayer);
 			int choosenColumn = inputColumn();
 			grid.placementPiece(choosenColumn, currentPlayer.getPiece());
-			System.out.println(grid);
+			user.displayGrid(grid);;
 		} catch (OutOfRangeException ignore) {
-			System.err.println("Insert an other column, the selected column is out of range !");
+			user.columnProblem();
 			playARound();
 		} catch (FullColumnException ignore) {
-			System.err.println("Insert an other column, the selected column is full !");
+			user.fullColumn();
 			playARound();
 		}
 	}
@@ -107,9 +111,9 @@ public class Game {
 	 * @throws FullColumnException
 	 */
 	public int inputColumn() throws OutOfRangeException, FullColumnException {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Insert a column ranged between 0 and 6 !");
-		int column = scanner.nextInt();
+		Scanner scanner = user.scanner();
+		user.inputColumn();
+		int column = user.nextInt(scanner);
 		if ((column < 0) || (column >= Grid.NBCOLUMN)) {
 			throw new OutOfRangeException();
 		}
@@ -117,6 +121,14 @@ public class Game {
 			throw new FullColumnException();
 		}
 		return column;
+	}
+	
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+	
+	public Grid getGrid() {
+		return grid;
 	}
 
 }

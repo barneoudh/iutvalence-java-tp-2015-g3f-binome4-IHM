@@ -9,7 +9,6 @@ public class BoutonDeLaGrille extends JButton {
 		setBackground(Color.WHITE);
 		setEnabled(false);
 		
-	
 	}
 	
 

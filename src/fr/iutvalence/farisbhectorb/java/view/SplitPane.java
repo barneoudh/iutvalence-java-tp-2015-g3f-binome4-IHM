@@ -18,5 +18,6 @@ public class SplitPane extends JFrame {
 	         
 	        splitPane.setOneTouchExpandable(false);
 	        getContentPane().add(splitPane);
+	        
 	   }
-}
+} 
